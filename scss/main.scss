@@ -1,0 +1,116 @@
+@import "abstracts/variables";
+@import "vendors/bootstrap";
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+}
+
+/* BUTTON */
+.btn-primary {
+    background-color: $primary-color;
+    color: $text-color;
+}
+
+.btn-primary:hover {
+    background-color: $primary-hover;
+}
+
+.btn-search{
+    background-color: $section-bg;
+    color: $text-color;
+}
+
+.btn-search:hover {
+    background-color: #d7d0dc; // optional: make a variable later
+}
+
+/* SECTION CONTAINERS */
+.section-box {
+    background-color: $section-bg;
+    color: $section-text;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 1400px; 
+    margin: 0 auto;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: $navbar-bg !important;
+    color: $navbar-text;
+}
+
+.nav-link:hover {
+    color: $link-hover !important;
+}
+
+a {
+    text-decoration:none;
+    color:#000000; // optional: make a variable later
+}
+
+/* CARD */
+.card,
+.home-card {
+    margin: 10px;
+    background-color: $card-bg;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    text-align: center;
+    border: solid 1px $card-bg;
+}
+
+.home-card:hover {
+    background-color: $card-hover-bg !important;
+    border-color: $card-hover-bg;
+}
+.login-card {
+    background-color: #71457d; // your navbar purple
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+
+    h2 {
+        color: #ffffff;
+    }
+
+    label {
+        color: #ffffff;
+    }
+}
+/* MUSIC CARD (Explore Page) */
+.music-card {
+    margin: 0 0 30px 0;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    background-color: #F9D9FC !important;
+
+    .music-card-image {
+        height: 200px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+        a {
+            display: block;
+            height: 200px;
+        }
+    }
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+
+        h3 {
+            font-size: 1.1rem;
+            padding-top: 10px;
+            margin: 0;
+            color:black ;
+        }
+    }
+}

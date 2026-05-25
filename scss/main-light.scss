@@ -1,0 +1,18 @@
+/* Light mode overrides */
+$background-color: #ffffff;
+$text-color: #000000;
+
+$section-bg: #f2f2f2;
+$section-text: #000000;
+
+$navbar-bg: #d8c6e3;
+$navbar-text: #000000;
+
+$primary-color: #9428a5;
+$primary-hover: #e600ff;
+
+$card-bg: #ffffff;
+$card-hover-bg: #e8b8ff;
+
+/* Import the main theme */
+@import "main";

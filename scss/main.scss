@@ -1,12 +1,14 @@
+// Import variables and Bootstrap
 @import "abstracts/variables";
 @import "vendors/bootstrap";
 
+// Global page styling
 body {
     background-color: $background-color;
     color: $text-color;
 }
 
-/* BUTTON */
+/* BUTTON STYLES */
 .btn-primary {
     background-color: $primary-color;
     color: $text-color;
@@ -16,13 +18,13 @@ body {
     background-color: $primary-hover;
 }
 
-.btn-search{
+.btn-search {
     background-color: $section-bg;
     color: $text-color;
 }
 
 .btn-search:hover {
-    background-color: #d7d0dc; // optional: make a variable later
+    background-color: #d7d0dc; // could be a variable later
 }
 
 /* SECTION CONTAINERS */
@@ -31,7 +33,7 @@ body {
     color: $section-text;
     padding: 20px;
     border-radius: 12px;
-    max-width: 1400px; 
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -46,54 +48,61 @@ body {
 }
 
 a {
-    text-decoration:none;
-    color:#000000; // optional: make a variable later
+    text-decoration: none;
+    color: #000000; // optional variable
 }
 
-/* CARD */
+/* GENERIC CARD STYLING */
 .card,
 .home-card {
     margin: 10px;
     background-color: $card-bg;
-    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
     padding: 12px;
     text-align: center;
-    border: solid 1px $card-bg;
+    border: 1px solid $card-bg;
+}
+
+/* CAROUSEL CARD IMAGES */
+.card-img {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 6px;
 }
 
 .home-card:hover {
     background-color: $card-hover-bg !important;
     border-color: $card-hover-bg;
 }
+
+/* LOGIN CARD */
 .login-card {
-    background-color: #71457d; // your navbar purple
-    color: #ffffff;
+    background-color: #71457d; // purple theme
+    color: #fff;
     border: none;
     border-radius: 12px;
 
-    h2 {
-        color: #ffffff;
-    }
-
-    label {
-        color: #ffffff;
+    h2, label {
+        color: #fff;
     }
 }
-/* MUSIC CARD (Explore Page) */
+
+/* EXPLORE PAGE MUSIC CARD */
 .music-card {
     margin: 0 0 30px 0;
-    background-color: #fff;
+    background-color: #F9D9FC !important;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
     padding: 12px;
     text-align: center;
     border: 1px solid #eaeaea;
     border-radius: 6px;
-    background-color: #F9D9FC !important;
 
     .music-card-image {
         height: 200px;
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center;
         background-size: cover;
 
         a {
@@ -110,7 +119,82 @@ a {
             font-size: 1.1rem;
             padding-top: 10px;
             margin: 0;
-            color:black ;
+            color: black;
         }
     }
+}
+
+/* FAVOURITES + PLAYLIST LINK COLOURS */
+.user-favs li,
+.user-favs li a,
+.user-favs li a:visited,
+.user-favs li a:hover,
+.user-favs li a:active,
+.my-playlists li,
+.my-playlists li a,
+.my-playlists li a:visited,
+.my-playlists li a:hover,
+.my-playlists li a:active {
+    color: #ffffff !important;
+}
+
+/* PLAYLIST PAGE */
+.playlist-page {
+    color: #fff;
+}
+
+.playlist-card {
+    background-color: #F9D9FC;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    color: black;
+    min-height: 260px;
+
+    .playlist-card-title {
+        margin-bottom: 16px;
+        font-weight: 600;
+    }
+
+    .removeFromPlaylist {
+        margin-top: 8px;
+        display: inline-block;
+    }
+}
+
+/* SEARCH SUGGESTIONS */
+.suggestions li {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+/* PLAYLIST SONG LIST */
+.playlist-song-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist-song-list li {
+    margin-bottom: 8px;
+}
+
+.playlist-song-link {
+    display: block;
+    padding: 10px 14px;
+    background-color: #222;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.playlist-song-link:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+
+.col-md-3 {
+  margin-bottom: 30px;
 }

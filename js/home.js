@@ -1,8 +1,7 @@
 var home = {
   init: function() {
 
-
-  
+    // Carousel for trending songs
     new Glide('.glide-songs', {
       type: 'carousel',
       perView: 4,
@@ -14,7 +13,7 @@ var home = {
       }
     }).mount();
 
-
+    // Carousel for trending albums
     new Glide('.glide-albums', {
       type: 'carousel',
       perView: 4,
@@ -25,7 +24,9 @@ var home = {
         576: { perView: 1 }
       }
     }).mount();
-        new Glide('.glide-artists', {
+
+    // Carousel for trending artists
+    new Glide('.glide-artists', {
       type: 'carousel',
       perView: 4,
       breakpoints: {
@@ -36,7 +37,7 @@ var home = {
       }
     }).mount();
 
-
+    // Carousel for trending podcasts
     new Glide('.glide-podcasts', {
       type: 'carousel',
       perView: 4,

@@ -3,10 +3,13 @@ require_once(__DIR__ . '/../classes/user.class.php');
 
 $error = "";
 
+// Handle form submission
 if($_POST) {
 
+    // Registration form
     if(isset($_POST['register'])) {
 
+        // Basic validation
         if(!$_POST['email']){
             $error = "Email not set";
         } else if(!$_POST['password']){
@@ -21,6 +24,7 @@ if($_POST) {
             $error = "Email is not valid";
         }
 
+        // Show error or create account
         if($error) {
             $Smarty->assign('error', $error);
         } else {  
@@ -34,8 +38,10 @@ if($_POST) {
             }
         }
 
+    // Login form
     } else if(isset($_POST['login'])) {
 
+        // Basic validation
         if(!$_POST['email']) {
             $error = "Email not set";
         } else if(!$_POST['password']) {
@@ -46,6 +52,7 @@ if($_POST) {
             $error = "Password must be at least 8 characters in length";
         }
 
+        // Show error or attempt login
         if($error) {
             $Smarty->assign('error', $error);
         } else {
@@ -53,6 +60,7 @@ if($_POST) {
             $user_data = $User->loginUser($_POST['email'], $_POST['password']);
 
             if($user_data) {
+                // Store session and redirect
                 $_SESSION['is_loggedin'] = true;
                 $_SESSION['user_data'] = $user_data;
                 header("Location: index.php?p=account");
@@ -63,3 +71,6 @@ if($_POST) {
         }
     }
 }
+
+// Display login/register page
+$Smarty->display('pages/login.tpl');

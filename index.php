@@ -1,9 +1,9 @@
 <?php 
 
 // Enable error reporting during development
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+
 
 // Load core system bootstrapping (DB, Smarty, autoloading, session, etc.)
 require_once(__DIR__. '/includes/boot.include.php');

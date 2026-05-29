@@ -50,25 +50,31 @@ class User {
     }
 
     // Change the logged-in user's password
-    // First checks the current password is correct
     public function changeUserPassword($current_pass, $new_pass){
-        // Verify the current password matches the stored hash
-        if (!password_verify($current_pass, $_SESSION['user_data']['user_pass'])) {
-            return false; // incorrect current password
+        // Fetch the latest user data from the database
+        $query = "SELECT user_pass FROM users WHERE user_id = :user_id";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute(['user_id' => $_SESSION['user_data']['user_id']]);
+        $user = $stmt->fetch();
+
+        // Verify the current password
+        if (!$user || !password_verify($current_pass, $user['user_pass'])) {
+            return false;
         }
 
-        // Hash the new password before storing it
+        // Hash the new password
         $new_sec_pass = password_hash($new_pass, PASSWORD_DEFAULT);
 
-        $query = "UPDATE users 
-                  SET user_pass = :user_pass 
-                  WHERE user_id = :user_id";
-
+        // Update the password in the database
+        $query = "UPDATE users SET user_pass = :user_pass WHERE user_id = :user_id";
         $stmt = $this->Conn->prepare($query);
         $stmt->execute([
             'user_pass' => $new_sec_pass,
             'user_id'   => $_SESSION['user_data']['user_id']
         ]);
+
+        // Update the session so the user stays logged in
+        $_SESSION['user_data']['user_pass'] = $new_sec_pass;
 
         return true;
     }

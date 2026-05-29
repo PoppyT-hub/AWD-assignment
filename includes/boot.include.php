@@ -1,6 +1,7 @@
 <?php
 global $Smarty;
 
+
 // Start session and load core configuration + database connection
 session_start();
 require_once(__DIR__.'/config.include.php');
